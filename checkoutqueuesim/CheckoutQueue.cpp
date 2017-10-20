@@ -18,7 +18,7 @@ CheckoutQueue::CheckoutQueue(){
 }
 
 /*
-Deconstrucutor
+Destructor
 Frees all memory allocated on the heap
 */
 CheckoutQueue::~CheckoutQueue(){
@@ -41,10 +41,10 @@ void CheckoutQueue::deleteFront(){
 	}
 	else{
 		shopperNode *tempNode;
-        tempNode = head;
-        head = head->next;
-       	head->prev = NULL;
-        delete tempNode;
+        	tempNode = head;
+       	 	head = head->next;
+       		head->prev = NULL;
+        	delete tempNode;
     }
         intSize--;
 }
