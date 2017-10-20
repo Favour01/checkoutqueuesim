@@ -1,0 +1,59 @@
+/***************************************
+COMP 15 HOMEWORK 3
+FAVOUR OKEREKE-MBA (fokere01)
+Nozama
+09/30/2017
+***************************************/
+
+This program was writen to simulate a grocery store and test how fast shoppers will check out based on the number of standard queues, express queues and maximimum number of items to have on an express queue.
+
+Credit: I used the got_int function provided by Mark Sheldon in main.
+
+*****************************************************************
+FILES:
+*shopper.h: .h file that conatins the shopper struct.
+
+*CheckoutQueue.h: .h file for the CheckoutQueue class which contains member function declarations (constructor and destructor included) and private memeber variables declarations. 
+
+* CheckoutQueue.cpp: .cpp file for the CheckoutOueue class that contains member function definations, constructor initialization, and destructor defination.
+
+*testCheckoutQueue.cpp: .cpp file used to test the member functions of the CheckoutQueue class.
+
+*GrocerySim.h: .h file for the GrocerySim class which contains member function declarations (constructor and destructor included) and private memeber variables declarations
+
+*GrocerySim.cpp: .cpp file for the GrocerySim class that contains member function definations, constructor initialization, and destructor defination.
+
+main.cpp: .cpp file used to test the GrocerySim class.
+
+Makefile: used to compile and provide homework. To compile type make. To run type ./grocerySim NUM_STANDARD_LANES NUM_EXPRESS_LANES MAX_EXPRESS_ITEMS \ [INPUT_FILE]. If a file is not provided, type in the shopper info from the terminal in the following format: 1 2
+				  3 4
+				  5 6
+where the first number is the arrival time of the sghopper and the second is the number of items they arrive with.
+
+*****************************************************************
+*DATA STRUCTUE and ALGORITHMS:
+For this assignment, I used a doubly linked list to represent a queue datat structure. A queue was the best for this assignment because a queue at a store operates on a frist in first out (FIFO) bases and that's exactly the same as a queue. The most important functions associated with this data structure where:
+enqueue(), dequeue(), isEmpty(), front() and size().
+
+Algorithm for isEmpty:
+begin procedure isEmpty
+	if front is euqal to NULL
+		return true
+	else
+		return false
+end procedure
+
+Algorithm for enqueue:
+begin procedure enqueue
+	create a temporary node to hold the new shopper struct
+	set the last node to point to it
+	set the new node's prev to point to the last node
+	set the temporary node's element to the new shopper
+	set the new node's nexr to point to NULL
+	set back to point to the new node
+end procedure
+
+*****************************************************************
+*TESTING:
+After the checkout queue class was writen, the .cpp file - testChekoutQueue, was written to make sure all the member functions of the class worked great. Refer to the .cpp file for test cases. After the tests were passed I moved on to write the GrocerySim class and when it was done. I tested it with an empty file, a file that contained only one shopper, and a multiple shopper file. When that was done, I tested usins cin to get the shopper details.
+
